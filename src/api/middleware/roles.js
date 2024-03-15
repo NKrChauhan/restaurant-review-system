@@ -6,6 +6,12 @@ const roles = {
         read: true,
         update: true,
         delete: false
+      },
+      reviewListing: {
+        create: false,
+        read: true,
+        update: true,
+        delete: false
       }
     },
     user: {
@@ -14,10 +20,22 @@ const roles = {
         read: true,
         update: false,
         delete: false
+      },
+      reviewListing: {
+        create: true,
+        read: true,
+        update: true,
+        delete: true
       }
     },
     admin: {
       restaurantListing: {
+        create: true,
+        read: true,
+        update: true,
+        delete: true
+      },
+      reviewListing: {
         create: true,
         read: true,
         update: true,
