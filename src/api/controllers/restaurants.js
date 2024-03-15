@@ -1,5 +1,5 @@
 const express = require('express');
-const Restaurant = require('../models/restaurants'); // Assuming your restaurant model
+const Restaurant = require('../models/restaurant'); // Assuming your restaurant model
 const auth = require('../middleware/auth'); // Import authentication middleware
 const authorize = require('../middleware/roles'); // Import RBAC middleware
 const asyncHandler = require('express-async-handler')

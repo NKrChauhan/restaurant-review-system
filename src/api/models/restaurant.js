@@ -47,13 +47,6 @@ const restaurantSchema = new mongoose.Schema({
       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
     },
   },
-  ratings: { 
-    type: [{
-      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Reference to User model for user who rated
-      rating: { type: Number, min: 1, max: 5 },
-    }],
-    default: []
-  }
 }, {
   timestamps: true // Add timestamps for created and updated at
 });
