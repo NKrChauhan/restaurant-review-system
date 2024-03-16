@@ -4,7 +4,7 @@ const mongoose = require('mongoose'); // Assuming MongoDB connection details in 
 const cors = require('cors'); // Enable CORS for development
 const restaurantsRouter = require('./api/controllers/restaurants'); // Import item controller
 const usersRouter = require('./api/controllers/users'); // Import user controller (optional, if separate)
-
+const reviewsRouter = require('./api/controllers/reviews')
 const app = express(); // start the express
 const port = process.env.PORT || 3000; // Use environment variable for port
 
@@ -26,14 +26,15 @@ app.use(express.json());
 
 // for log user in and provide with the auth token
 
-// User authentication routes (optional, if separate)
-app.use('/users', usersRouter);
+// User authentication routes
+app.use('/api/v1/users', usersRouter);
 
 // Protected routes requiring authorization (middleware)
-// app.use('/items', auth); // Assuming 'auth' middleware is defined elsewhere
+// CRUD routes for restaurants
+app.use('/api/v1/restaurants', restaurantsRouter);
 
-// CRUD routes for items
-app.use('/restaurants', restaurantsRouter);
+// CRUD routes for reviews
+app.use('/api/v1/reviews', reviewsRouter)
 
 // Error handling middleware (optional)
 app.use((err, req, res, next) => {
