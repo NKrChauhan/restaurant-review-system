@@ -15,22 +15,29 @@ This is the API for a restaurant review system. It allows users to create, retri
 
 This project provides a RESTful API for managing restaurant reviews. 
 Users can be of 3 types:
-* admin, businessOwner & user
-* The permissions to perform operations is based on the rules defined for each user.
+* admin, business owner & user
+* The permissions to perform operations are based on the rules defined for each user.
 
 ##### Operations
 User:
-* CRUD operation for a user (of any type).
-* Login by using credentials and fetch JWT token.
+* Create a user.
+* Delete a user.
+* Get details of a user.
+* Update the user profile details.
+* Login user by using credentials and fetch the JWT token.
 
 Restaurant:
-* CRUD operation of busineessOwner and admin to create restaurants in the listing.
+* Create a restaurant.
+* Delete a restaurant.
+* Get details of a restaurant.
+* Get all restaurants.
+* Update details of the restaurant.
 
 Review:
 * Create new reviews for existing restaurants.
 * Retrieve existing reviews for a restaurant or all restaurants.
-* Update their own reviews.
-* Delete their own reviews.
+* Update their reviews.
+* Delete their reviews.
 * Response to a review by restaurant owner or admin only.
 
 **Prerequisites**
@@ -82,11 +89,11 @@ Review:
 
 The API uses JSON for request and response bodies. Here are the main endpoints:
 
-This document outlines the API endpoints for managing users, restaurants and reviews in the system. The base URL for all requests is assumed to be `http://localhost:3000/api/v1`.
+This document outlines the API endpoints for managing users, restaurants, and reviews in the system. The base URL for all requests is assumed to be `http://localhost:3000/api/v1`.
 
 **Authentication:**
 
-Most user and restaurant management endpoints require authentication using a JSON Web Token (JWT). You can obtain a JWT by logging in with a user's email and password.
+Most user and restaurant management endpoints require JSON Web Token (JWT) authentication. You can obtain a JWT by logging in with a user's email and password.
 
 **User Endpoints**
 
@@ -106,7 +113,7 @@ Most user and restaurant management endpoints require authentication using a JSO
         * `email`: User's email address (required)
         * `password`: User's password (required)
     * Response:
-        * On success, returns a JSON object containing the token and potentially other user info.
+        * On success, a JSON object containing the token and potentially other user info is returned.
         * On error, returns a JSON object with an error message.
 * **Get User Info (GET /users/me):**
     * Requires authorization with a valid JWT token.
@@ -153,7 +160,7 @@ Most user and restaurant management endpoints require authentication using a JSO
     * Path Parameter:
         * `:restaurantId`: ObjectID of the restaurant you want to retrieve.
     * Response:
-        * On success, returns a JSON object containing the requested restaurant's information.
+        * On success, a JSON object containing the requested restaurant's information is returned.
         * On error, returns a JSON object with an error message.
 * **Delete Restaurant (DELETE /restaurants/:restaurantId):**
     * Requires authorization with a valid JWT token (usually associated with the business owner role).
