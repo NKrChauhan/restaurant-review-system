@@ -10,8 +10,9 @@ const roles = {
       reviewListing: {
         create: false,
         read: true,
-        update: true,
-        delete: false
+        update: false,
+        delete: false,
+        response: true
       }
     },
     user: {
@@ -25,7 +26,8 @@ const roles = {
         create: true,
         read: true,
         update: true,
-        delete: true
+        delete: true,
+        response: false
       }
     },
     admin: {
@@ -39,7 +41,8 @@ const roles = {
         create: true,
         read: true,
         update: true,
-        delete: true
+        delete: true,
+        response: true
       }
     }
   };
