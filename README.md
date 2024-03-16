@@ -216,4 +216,10 @@ You can find the postman collections in the root folder of project. name: `Resta
 
 **License**
 
-This project is licensed under the MIT License (see LICENSE
+This project is licensed under the MIT License (see LICENSE)
+
+**Further Enhancements**
+* Add tests for the controller using jest.
+* Make a dashboard for making it User friendly.
+* Strategies to further optimize the code.
+* Further refactoring each layer to implement best industrial practices.
